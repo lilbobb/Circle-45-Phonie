@@ -4,13 +4,23 @@ function startApp() {
     // so create and use/call additional functions from here
   
     // pls remove the below and make some magic in here!
-    console.log('make magic in here!');
-  
-    const header = document.querySelector('h2');
+   const header = document.querySelector('h2');
     if(header) {
-      header.textContent = 'make some magic here!!';
+      header.textContent = 'Identify the telecoms carrier from a phone number';
     }
   };
+  let logo = ["😂", "😍", "😌", "🐶"]
+
+    let phoneNumber = document.getElementById("number-el")
+    let displayLogo = document.getElementById("logo")
+    let buttonEl = document.getElementById('btn')
+  
+   buttonEl.addEventListener("click", function() {
+     let baseNumber = phoneNumber.value
+     
+     displayLogo.textContent =logo[0]
+     
+   });
   
   // ======= DO NOT EDIT ============== //
   export default startApp;
