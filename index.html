@@ -1,60 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Name of chosen challenge</title>
-
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phonie</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    
-<!--     <h2>Identify the telecoms carrier from a phone number</h2>
-  <div id="input-div">
-    <div id="logo">logo</div>
-    <form method="post">
-      <input type="number" id="number-el">
-    </form>
-    <button id="btn">Enter</button>
-  </div> -->
 
 
-<!--   Changes Uche made -->
-<div class="container">
-  <h2 class="title">Identify the telecoms carrier from a phone number</h2>
-  <form action="#" method="post" class="form">
-    <div class="form__field">
-      <label for="name--input" class="label">Name</label>
-      <input type="text" id="name--input" class="input" placeholder="surname first">
-    </div>
+  <!--   Changes Uche made -->
+    <div class="container">
 
-    <div class="form__field">
-      <label for="email--input" class="label">Email</label>
-      <input type="email" id="email--input" class="input" placeholder="@mail.com">
-    </div>
-
-    <div class="form__field">
-      <label for="phone--input" class="label">Phone Number</label>
-      <input type="number" id="phone--input" class="input">
-      <div class="logo__wrapper">
-        <img src="./assets/mtn-logo.png" alt="mtn" class='logo'>
-        <img src="./assets/airtel-logo.png" alt="airtel" class='logo'>
-        <img src="./assets/glo-logo.png" alt="glo" class='logo'>
-        <img src="./assets/9mobile-logo.png" alt="9mobile" class='logo'>
-    </div>
-    </div>
-  </form>
-    <button class="btn">Confirm network</button>
-</div>
-<!-- The changes ends here 👆 -->
-
+      <div class="form-section">
+        <h2 class="title">Identify the telecoms carrier from a phone number</h2>
+        <form action="#" method="post" class="form">
+          <div class="form__field">
+            <label for="name--input" class="label">Name</label>
+  <!--           I added required for validation @Robert -->
+            <input type="text" id="name--input" class="input" placeholder="surname ..." required>
+          </div>
   
-
+          <div class="form__field">
+            <label for="email--input" class="label">Email</label>
+  <!--           I added required for validation @Robert -->
+            
+            <input type="email" id="email--input" class="input" placeholder="@mail.com" required>
+          </div>
   
+          <div class="form__field">
+            <label for="phone--input" class="label">Phone Number</label>
+  <!--           I added required for validation and also put the button/list element inside the div to make the UI organised @Robert -->
+            
+            <input type="number" id="phone--input" class="input" required>
+            <ul class='auto-complete-li' id='suggested-li'></ul>
+            <!--         <input type="submit"> -->
+            <button class="btn">Confirm network</button>
+          </div>
+            
+        </form>
+        <div class="logo__wrapper">
+          <img src="./assets/mtn-logo.png" alt="mtn" class='logo'>
+          <img src="./assets/airtel-logo.png" alt="airtel" class='logo'>
+          <img src="./assets/glo-logo.png" alt="glo" class='logo'>
+          <img src="./assets/9mobile-logo.png" alt="9mobile" class='logo'>
+        </div>
+      </div>
+    </div>
+  <!-- The changes ends here 👆 -->
 
-    <!-- // ============= EEND DO NOT EDIT ============== // -->
-    <script src="index.mjs" type="module"></script>
-    <!-- // ============= EEND DO NOT EDIT ============== // -->
+
+
+
+
+  <!-- // ============= EEND DO NOT EDIT ============== // -->
+  <script src="index.mjs" type="module"></script>
+  <!-- // ============= EEND DO NOT EDIT ============== // -->
 </body>
+
 </html>
