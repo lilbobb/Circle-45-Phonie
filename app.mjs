@@ -77,7 +77,7 @@ inputNumber.addEventListener("input", function() {
   }
 
   //error alert for invalid number inputs(more to be done) -- Joshua
-  if (inputNumber.value.includes(+234) && inputNumber.value.length > 13) {
+  if (inputNumber.value.includes(+234) && inputNumber.value.length > 14) {
     alert("Please input a valid phone number")
   } else if (inputNumber.value.length > 11 && inputNumber.value.length < 11) {
     alert("Please input a valid phone number")
