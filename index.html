@@ -31,12 +31,13 @@
             <input type="email" id="email--input" class="input" placeholder="@mail.com" required>
           </div>
   
-          <div class="form__field">
-            <label for="phone--input" class="label">Phone Number</label>
-  <!--           I added required for validation and also put the button/list element inside the div to make the UI organised @Robert -->
-            
-            <input type="number" id="phone--input" class="input" required>
-            <ul class='auto-complete-li' id='suggested-li'></ul>
+<div class="form__field">
+<label for="phone--input" class="label">Phone Number</label>
+
+<input list="number-list" type="number" pattern="[0-9]{3} [0-9]{3} [0-9]{4}" id="phone--input" class="input" list="numbers" required>
+<datalist id="number-list">
+</datalist>
+
             <!--         <input type="submit"> -->
             <button class="btn">Confirm network</button>
           </div>

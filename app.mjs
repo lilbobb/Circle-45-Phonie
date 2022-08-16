@@ -11,11 +11,9 @@ function startApp() {
   }
 };
 // instead of li-elements, we should rather use 'listElement', this is more readable @Robert
-const suggestions = document.querySelector('#suggested-li')
-const listElements = document.querySelector('#list-El')
+
+const datalist = document.querySelector('#number-list')
 const inputNumber = document.querySelector('#phone--input')
-
-
 
 //////////////////////////////////////////////////
 // Changes Uche made
@@ -37,16 +35,22 @@ const etisalat = ['0809', '0909', '0818', '0817'];
 const totalData = [...mtn, ...airtel, ...glo, ...etisalat]
 
 const loadSuggestedNumbers = (data, element) => {
+  
+  console.log(element)
   element.innerHTML = ''
   let innerElement = ''
   if (data) {
     data.forEach((num) => {
-      return innerElement += `<li id='list-El'>${num}<li>`
+      
+      return innerElement += `<option value=${num}>${num} </option>`
     });
   }
 
   element.innerHTML = innerElement;
+
 }
+
+
 
 const changesData = (arr) => {
   const newArr = arr.map((e) => {
@@ -61,33 +65,30 @@ function filterData(data, searchNum) {
   return data.filter((e) => e.includes(searchNum))
 }
 
+
 inputNumber.addEventListener("input", function() {
   logos.forEach((e) => {
     e.classList.remove('visible')
   })
 
   if (inputNumber.value.length === 0) {
-    loadSuggestedNumbers([], suggestions)
+    loadSuggestedNumbers([], datalist)
   } if (inputNumber.value > 2 && inputNumber.value.includes('0')) {
     const filteredData = filterData(totalData, inputNumber.value);
-    loadSuggestedNumbers(filteredData, suggestions)
+    loadSuggestedNumbers(filteredData, datalist)
   } if (inputNumber.value > 4 && inputNumber.value.includes(+234)) {
     const filteredData = filterData(changesData(totalData), inputNumber.value);
-    loadSuggestedNumbers(filteredData, suggestions)
+    loadSuggestedNumbers(filteredData, datalist)
   }
 
   //error alert for invalid number inputs(more to be done) -- Joshua
-  if (inputNumber.value.includes(+234) && inputNumber.value.length > 14) {
+  if (inputNumber.value.includes(+234) && inputNumber.value.length > 13) {
     alert("Please input a valid phone number")
   } else if (inputNumber.value.length > 11 && inputNumber.value.length < 11) {
     alert("Please input a valid phone number")
   }
 })
-//cooking something here...
- // li-elements.addEventListener('click', function(e)=>{
- //  e.preventDefault();
- //   inputNumber.value = li-element
- // })
+
 
 //Function to Validate and Update Number - Iheanacho
 const validatePhoneNumber = (e) => {
